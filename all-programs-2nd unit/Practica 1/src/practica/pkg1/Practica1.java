@@ -1,52 +1,55 @@
-
 package practica.pkg1;
 import java.util.Scanner;
-/**
- *
- * Hector Caleb Mosqueda Santes N°control.25260872
- */
+
+//Hector Caleb MOsqueda Santes N°control:25260872
 public class Practica1 {
 
-
-
-
-
-
     public static void main(String[] args) {
- float num1;
- float num2;
-Scanner scanner=new Scanner(System.in);
-    int op=0;
-    int ope=0;
-    int opr=0;
-        do {             
-            System.out.println("Ingresa el primer numero:");
-            num1= scanner.nextInt();
-            System.out.println("Ingresa el segundo numero:");
-            num2=scanner.nextInt();
-            System.out.println("Operacion a realizar\n1.SUMA\n2.RESTA\n3.Multiplicacion\n4.Division");
-            ope=scanner.nextInt();
-            switch(ope){
+
+        Scanner entrada = new Scanner(System.in);
+        double n1, n2;
+        double suma, resta, division, multi;
+
+        int operacion, numero = 0;
+
+        do {
+            System.out.println("Bienvenido a la calculadora \n");
+             System.out.println("Ingrese sus dos numeros para continuar");
+            System.out.println("Ingresa el numero 1:");
+            n1 = entrada.nextDouble();
+
+            System.out.println("Ingrese el numero 2:");
+            n2 = entrada.nextDouble();
+
+            System.out.println("Ingrese la operacion que desee realizar \n 1 + Suma , 2 + Resta, 3 + Multiplicacion, 4 + Division");
+            operacion = entrada.nextInt();
+
+            switch (operacion) {
                 case 1:
-                opr=(int) (num1+num2);
-                    System.out.println("Tu resultado es:"+opr);
+                    suma =n1 + n2;
+                    System.out.println("El resultado es: " + suma);
                     break;
                 case 2:
-                 opr=(int) (num1-num2);
-                    System.out.println("Tu resultado es:"+opr);
+                    resta =n1 - n2;
+                    System.out.println("El resultado es: " + resta);
                     break;
                 case 3:
-                    opr=(int) (num1*num2);
-                    System.out.println("Tu resultado es:"+opr);
+                    multi =n1 * n2;
+                    System.out.println("El resultado es: " + multi);
                     break;
                 case 4:
-                     opr=(int) (num1/num2);
-                     System.out.println("Tu resultado es:"+opr);
-                     break;
-                 default:System.out.println("No existe esa operacion");
-                 break;
+                    division =n1 / n2;
+                    System.out.println("El resultado es: " + division);
+                    break;
+                default:
+                    System.out.println("Opcion no valida");
+                    break;
             }
-        } while (op>2);
+
+            System.out.println("Desea seguir continuado?");
+            numero=entrada.nextInt();
+
+        } while (numero == 1);
+
     }
-    
 }
